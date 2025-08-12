@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pif.mapper.RecordMapper">
+
+	<insert id="registerUser" parameterType="com.example.pif.dto.RecordVO">
+		insert into 
+			record (m_id, r_date, r_time, r_decoration) 
+		values
+			(#{m_id}, #{r_date}, #{r_time}, #{r_decoration})
+	</insert>
+	
+	<select id="getRecordList">
+		select * from record where m_id = #{m_id} and r_date = #{r_date}
+	</select>
+
+    <update id="updateRecord">
+		update 
+			record
+		set
+			r_decoration=#{r_decoration}
+		where
+			r_num = #{r_num}
+	</update>
+
+    <delete id="deleteRecord">
+		delete from record where r_num = #{r_num}
+	</delete>
+
+</mapper>

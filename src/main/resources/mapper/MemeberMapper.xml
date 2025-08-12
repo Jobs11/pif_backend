@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pif.mapper.MemberMapper">
+
+	<insert id="registerUser" parameterType="com.example.pif.dto.MemberVO">
+		insert into 
+			member (m_name, m_nickname, m_birth, m_phone, m_email, m_id, m_password) 
+		values
+			(#{m_name}, #{m_nickname}, #{m_birth}, #{m_phone}, #{m_email}, #{m_id}, #{m_password})
+	</insert>
+	
+	<select id="getUser">
+		select * from member where m_id = #{m_id} and m_password = #{m_password}
+	</select>
+
+    <update id="updateUser">
+		update 
+			member
+		set
+			m_password=#{m_password}, m_nickname=#{m_nickname}, m_name=#{m_name}, m_phone=#{m_phone}, m_email=#{m_email} 
+		where
+			m_id = #{m_id}
+	</update>
+
+    <delete id="deleteUser">
+		delete from member where m_id = #{m_id}
+	</delete>
+
+</mapper>
