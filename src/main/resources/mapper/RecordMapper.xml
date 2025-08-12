@@ -12,7 +12,7 @@
 	</insert>
 	
 	<select id="getRecordList">
-		select * from record where m_id = #{m_id} and r_date = #{r_date}
+		select * from record where m_id = #{m_id} and r_date LIKE CONCAT('%', #{r_date}, '%')
 	</select>
 
     <update id="updateRecord">
