@@ -28,4 +28,14 @@
 		delete from member where m_id = #{m_id}
 	</delete>
 
+	<update id="updateProfile">
+		update 
+			member
+		set
+			m_paint = #{m_paint}
+		where
+			m_id = #{m_id}
+	</update>	
+
+
 </mapper>

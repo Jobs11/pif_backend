@@ -3,10 +3,12 @@ package com.example.pif.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.pif.dto.RecordVO;
 import com.example.pif.mapper.RecordMapper;
 
+@Service
 public class RecordServiceimpl implements RecordService {
 
 

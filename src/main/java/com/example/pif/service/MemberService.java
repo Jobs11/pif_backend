@@ -12,4 +12,6 @@ public interface MemberService {
     public void deleteUser(String m_id);
 
     public void updateUser(MemberVO member);
+
+    public void updateProfile(MemberVO memberVO);
 }

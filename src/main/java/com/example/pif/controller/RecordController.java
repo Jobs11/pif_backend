@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.pif.dto.MemberVO;
 import com.example.pif.dto.RecordVO;
 import com.example.pif.service.RecordService;
 

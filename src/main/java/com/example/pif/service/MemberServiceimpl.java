@@ -33,5 +33,10 @@ public class MemberServiceimpl implements MemberService {
     public void updateUser(MemberVO member) {
         memberMapper.updateUser(member);
     }
+
+    @Override
+    public void updateProfile(MemberVO member) {
+        memberMapper.updateProfile(member);
+    }
     
 }

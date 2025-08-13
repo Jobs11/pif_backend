@@ -39,7 +39,7 @@ public class MemberController {
     }
 
     @PostMapping("/modify")
-    public void ModifyUser(@RequestBody MemberVO member) {
+    public void modifyUser(@RequestBody MemberVO member) {
         memberService.updateUser(member);
     }
     
@@ -48,6 +48,11 @@ public class MemberController {
     public void deleteUser(@Param("m_id") String m_id) {
         System.out.println("삭제완료");
         memberService.deleteUser(m_id);
+    }
+
+    @PostMapping("/upprofile")
+    public void updateProfile(@RequestBody MemberVO member) {
+        memberService.updateProfile(member);
     }
     
     

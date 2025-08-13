@@ -16,6 +16,8 @@ public interface MemberMapper {
 
     public void updateUser(MemberVO memberVO);
 
+    public void updateProfile(MemberVO memberVO);
+
 
 
 }
