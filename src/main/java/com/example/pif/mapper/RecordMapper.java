@@ -12,6 +12,10 @@ import com.example.pif.dto.RecordVO;
 public interface RecordMapper {
 
     public List<RecordVO> getRecordList(@Param("m_id") String m_id, @Param("r_date") String r_date);
+
+    public RecordVO getRecord(Integer r_num);
+
+    public List<RecordVO> getRecordAllList(@Param("m_id") String m_id);
     
     public void registerRecord(RecordVO recordVO);
 

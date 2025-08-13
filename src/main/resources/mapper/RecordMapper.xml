@@ -15,6 +15,14 @@
 		select * from record where m_id = #{m_id} and r_date LIKE CONCAT('%', #{r_date}, '%')
 	</select>
 
+	<select id="getRecord">
+		select * from record where r_num = #{r_num}
+	</select>
+
+	<select id="getRecordAllList">
+		select * from record where m_id = #{m_id}
+	</select>
+
     <update id="updateRecord">
 		update 
 			record

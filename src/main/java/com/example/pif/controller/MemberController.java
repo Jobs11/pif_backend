@@ -27,14 +27,14 @@ public class MemberController {
     @PostMapping("/register")
     public void registerUser(@RequestBody MemberVO member) {
         memberService.registerUser(member);
-        System.out.println("등록완료");
+        System.out.println("회원 등록완료");
     }
     
     @GetMapping("/getUser")
     public MemberVO getUser(@Param("m_id") String m_id, @Param("m_password") String m_password) {
         MemberVO member = memberService.getUser(m_id, m_password);
-        System.out.println("불러오기 성공");
-        log.info("불러오기 성공: {}", member);
+        System.out.println("회원 불러오기 성공");
+        log.info("회원 불러오기 성공: {}", member);
         return member;
     }
 
@@ -46,7 +46,7 @@ public class MemberController {
 
     @PostMapping("/delete")
     public void deleteUser(@Param("m_id") String m_id) {
-        System.out.println("삭제완료");
+        System.out.println("회원 삭제완료");
         memberService.deleteUser(m_id);
     }
 

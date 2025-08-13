@@ -10,5 +10,6 @@ public class PostVO {
     private String p_content;
     private String p_registerdate;
     private String p_modifydate;
+    private String p_public;
     
 }

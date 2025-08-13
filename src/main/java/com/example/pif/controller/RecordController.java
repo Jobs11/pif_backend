@@ -14,6 +14,8 @@ import com.example.pif.dto.RecordVO;
 import com.example.pif.service.RecordService;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @Slf4j
 @RestController
@@ -26,14 +28,28 @@ public class RecordController {
     @PostMapping("/register")
     public void registerRecord(@RequestBody RecordVO recordVO) {
         recordService.registerRecord(recordVO);
-        System.out.println("등록완료");
+        System.out.println("기억 등록완료");
     }
 
     @GetMapping("/getlist")
     public List<RecordVO> getRecordList(@Param("m_id") String m_id, @Param("r_date") String r_date) {
         List<RecordVO> record = recordService.getRecordList(m_id, r_date);
-        System.out.println("불러오기 성공");
-        log.info("불러오기 성공: {}", record);
+        System.out.println("기억 불러오기 성공");
+        log.info("기억 불러오기 성공: {}", record);
+        return record;
+    }
+
+    @GetMapping("/getrecord")
+    public RecordVO getRecord(@Param("r_num") Integer r_num) {
+        return recordService.getRecord(r_num);
+    }
+    
+
+    @GetMapping("/getalllist")
+    public List<RecordVO> getRecordList(@Param("m_id") String m_id) {
+        List<RecordVO> record = recordService.getRecordAllList(m_id);
+        System.out.println("기억 불러오기 성공");
+        log.info("기억 불러오기 성공: {}", record);
         return record;
     }
 
@@ -45,7 +61,7 @@ public class RecordController {
     
     @PostMapping("/delete")
     public void deleteRecord(@Param("r_num") Integer r_num) {
-        System.out.println("삭제완료");
+        System.out.println("기억 삭제완료");
         recordService.deleteRecord(r_num);
     }
 
