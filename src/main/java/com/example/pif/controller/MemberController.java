@@ -38,6 +38,14 @@ public class MemberController {
         return member;
     }
 
+    @GetMapping("/getUserdata")
+    public MemberVO getUserData(@Param("m_id") String m_id) {
+        MemberVO member = memberService.getUserData(m_id);
+        System.out.println("회원 불러오기 성공");
+        log.info("회원 불러오기 성공: {}", member);
+        return member;
+    }
+
     @PostMapping("/modify")
     public void modifyUser(@RequestBody MemberVO member) {
         memberService.updateUser(member);
@@ -53,6 +61,8 @@ public class MemberController {
     @PostMapping("/upprofile")
     public void updateProfile(@RequestBody MemberVO member) {
         memberService.updateProfile(member);
+        System.out.println("프로필 수정 성공");
+        log.info("프로필 수정 성공: {}", member);
     }
     
     

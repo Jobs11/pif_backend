@@ -15,6 +15,10 @@
 		select * from member where m_id = #{m_id} and m_password = #{m_password}
 	</select>
 
+	<select id="getUserData">
+		select * from member where m_id = #{m_id}
+	</select>
+
     <update id="updateUser">
 		update 
 			member

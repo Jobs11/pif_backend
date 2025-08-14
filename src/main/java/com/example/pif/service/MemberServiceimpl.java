@@ -1,5 +1,6 @@
 package com.example.pif.service;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,11 @@ public class MemberServiceimpl implements MemberService {
     @Override
     public MemberVO getUser(String m_id, String m_password) {
         return memberMapper.getUser(m_id, m_password);
+    }
+
+    @Override
+    public MemberVO getUserData(String m_id){
+        return memberMapper.getUserData(m_id);
     }
 
     @Override

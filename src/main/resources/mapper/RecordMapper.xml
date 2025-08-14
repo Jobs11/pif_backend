@@ -22,6 +22,8 @@
 	<select id="getRecordAllList">
 		select * from record where m_id = #{m_id}
 	</select>
+	
+	
 
     <update id="updateRecord">
 		update 
