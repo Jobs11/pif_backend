@@ -39,5 +39,10 @@ public class CommentServiceimpl implements CommentService{
     public void updateComment(CommentVO comment) {
         commentMapper.updateComment(comment);
     }
+
+    @Override
+    public Integer getMyCount(String c_id) {
+        return commentMapper.getMyCount(c_id);
+    }
     
 }

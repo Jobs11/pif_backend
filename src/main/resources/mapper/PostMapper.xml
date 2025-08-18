@@ -28,4 +28,14 @@
 		delete from post where p_num = #{p_num}
 	</delete>
 
+	<select id="getMyList">
+		SELECT * FROM post WHERE p_id = #{p_id}
+	</select>
+
+	<select id="getMyCount">
+		SELECT COUNT(*) FROM post WHERE p_id = #{p_id}
+	</select>
+
+
+
 </mapper>

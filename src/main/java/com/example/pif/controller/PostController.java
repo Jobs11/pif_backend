@@ -49,5 +49,11 @@ public class PostController {
         System.out.println("게시글 삭제완료");
         postService.deletePost(p_id);
     }
+
+    @GetMapping("/getMyCount")
+    public Integer getMyCount(@Param("p_id") String p_id) {
+        System.out.println("댓글 불러오기 성공");
+        return postService.getMyCount(p_id);
+    }
     
 }

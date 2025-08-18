@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pif.mapper.CommentHeartMapper">
+
+	<insert id="registerHeart" parameterType="com.example.pif.dto.CommentHeartVO">
+		insert into 
+			commentheart (ch_id, ch_num) 
+		values
+			(#{ch_id}, #{ch_num})
+	</insert>
+	
+	
+    <select id="getCount">
+		select count(*) from commentheart where ch_num = #{ch_num}
+	</select>
+
+    <select id="getMyCount">
+		select count(*) from commentheart where ch_id = #{ch_id}
+	</select>
+
+    <delete id="deleteHeart">
+		delete from commentheart where ch_id = #{ch_id} and ch_num = #{ch_num}
+	</delete>
+
+	<select id="getHeart">
+		select count(*) from commentheart where ch_id = #{ch_id} and ch_num = #{ch_num}
+	</select>
+
+</mapper>

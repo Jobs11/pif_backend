@@ -17,5 +17,7 @@ public interface CommentService {
     public void deleteComment(Integer c_num);
 
     public void updateComment(CommentVO comment);
+
+    public Integer getMyCount(@Param("c_id") String c_id);
     
 }

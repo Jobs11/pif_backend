@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pif.mapper.HeartMapper">
+
+	<insert id="registerHeart" parameterType="com.example.pif.dto.HeartVO">
+		insert into 
+			heart (h_id, h_num) 
+		values
+			(#{h_id}, #{h_num})
+	</insert>
+	
+	
+    <select id="getCount">
+		select count(*) from heart where h_num = #{h_num}
+	</select>
+
+    <select id="getMyCount">
+		select count(*) from heart where h_id = #{h_id}
+	</select>
+
+    <delete id="deleteHeart">
+		delete from heart where h_id = #{h_id} and h_num = #{h_num}
+	</delete>
+
+	<select id="getHeart">
+		select count(*) from heart where h_id = #{h_id} and h_num = #{h_num}
+	</select>
+
+</mapper>

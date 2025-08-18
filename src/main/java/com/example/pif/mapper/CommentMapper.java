@@ -20,6 +20,8 @@ public interface CommentMapper {
 
     public void updateComment(CommentVO comment);
 
+    public Integer getMyCount(@Param("c_id") String c_id);
+
     
     
 } 

@@ -18,5 +18,7 @@ public interface PostMapper {
 
     public void updatePost(PostVO postVO);
 
+    public Integer getMyCount(@Param("p_id") String p_id);
+
     
 }

@@ -14,4 +14,6 @@ public interface PostService {
     public void deletePost(String p_id);
 
     public void updatePost(PostVO postVO);
+
+    public Integer getMyCount(@Param("p_id") String p_id);
 }

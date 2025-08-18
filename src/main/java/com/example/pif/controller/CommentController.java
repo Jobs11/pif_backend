@@ -54,5 +54,11 @@ public class CommentController {
         System.out.println("댓글 삭제완료");
         commentService.deleteComment(c_num);
     }
+
+    @GetMapping("/getMyCount")
+    public Integer getMyCount(@Param("c_id") String c_id) {
+
+        return commentService.getMyCount(c_id);
+    }
     
 }

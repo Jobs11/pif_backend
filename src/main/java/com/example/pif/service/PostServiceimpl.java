@@ -34,5 +34,11 @@ public class PostServiceimpl implements PostService{
     public void updatePost(PostVO postVO) {
         postMapper.updatePost(postVO);
     }
+
+    @Override
+    public Integer getMyCount(String p_id) {
+        System.out.println("개수: 등장");
+        return postMapper.getMyCount(p_id);
+    }
     
 }
