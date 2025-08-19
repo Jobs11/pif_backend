@@ -1,5 +1,7 @@
 package com.example.pif.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +37,11 @@ public class HeartServiceimpl implements HeartService{
     @Override
     public Integer getMyCount(String h_id) {
         return heartMapper.getMyCount(h_id);
+    }
+
+    @Override
+    public List<Integer> getTopHeart() {
+        return heartMapper.getTopHeart();
     }
     
 }

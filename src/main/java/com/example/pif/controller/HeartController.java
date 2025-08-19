@@ -1,5 +1,7 @@
 package com.example.pif.controller;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
-
-
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Slf4j
 @RestController
@@ -35,19 +35,25 @@ public class HeartController {
         heartService.deleteHeart(heart);
         System.out.println("좋아요 취소!");
     }
-    
+
     @GetMapping("/getHeart")
-    public Integer getHeart(@Param("h_id") String h_id, @Param("h_num") Integer h_num) {
+    public Integer getHeart(@RequestParam("h_id") String h_id, @RequestParam("h_num") Integer h_num) {
         return heartService.getHeart(h_id, h_num);
     }
-    
+
     @GetMapping("/getCount")
-    public Integer getCount(@Param("h_num") Integer h_num) {
+    public Integer getCount(@RequestParam("h_num") Integer h_num) {
         return heartService.getCount(h_num);
     }
-    
+
     @GetMapping("/getMyCount")
-    public Integer getMyCount(@Param("h_id") String h_id) {
+    public Integer getMyCount(@RequestParam("h_id") String h_id) {
         return heartService.getMyCount(h_id);
     }
+
+    // @GetMapping("/getTopCount")
+    // public List<Integer> getTopCount(@RequestParam String param) {
+    // return heartService.getTopHeart();
+    // }
+
 }

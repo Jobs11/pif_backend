@@ -11,14 +11,17 @@ import com.example.pif.dto.PostVO;
 public interface PostMapper {
 
     public List<PostVO> getPostList(@Param("p_public") String p_public);
-    
+
     public void registerPost(PostVO postVO);
 
-    public void deletePost(String p_id);
+    public void deletePost(@Param("p_num") Integer p_num);
 
     public void updatePost(PostVO postVO);
 
     public Integer getMyCount(@Param("p_id") String p_id);
 
-    
+    public List<PostVO> getPostTop();
+
+    public List<PostVO> getMyPost(@Param("p_id") String p_id);
+
 }

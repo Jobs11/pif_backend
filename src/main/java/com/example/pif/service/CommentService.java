@@ -8,16 +8,16 @@ import com.example.pif.dto.CommentVO;
 
 public interface CommentService {
 
-    public List<CommentVO> getCommentList(@Param("c_getnum") Integer c_getnum);
+    public List<CommentVO> getCommentList(Integer c_getnum);
 
-    public Integer getCount(@Param("c_getnum") Integer c_getnum);
-    
+    public Integer getCount(Integer c_getnum);
+
     public void registerComment(CommentVO comment);
 
     public void deleteComment(Integer c_num);
 
     public void updateComment(CommentVO comment);
 
-    public Integer getMyCount(@Param("c_id") String c_id);
-    
+    public Integer getMyCount(String c_id);
+
 }

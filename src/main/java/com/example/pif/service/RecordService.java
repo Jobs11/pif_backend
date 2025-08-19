@@ -7,12 +7,12 @@ import org.apache.ibatis.annotations.Param;
 import com.example.pif.dto.RecordVO;
 
 public interface RecordService {
-    public List<RecordVO> getRecordList(@Param("m_id") String m_id, @Param("r_date") String r_date);
+    public List<RecordVO> getRecordList(String m_id, String r_date);
 
     public RecordVO getRecord(Integer r_num);
 
-    public List<RecordVO> getRecordAllList(@Param("m_id") String m_id);
-    
+    public List<RecordVO> getRecordAllList(String m_id);
+
     public void registerRecord(RecordVO recordVO);
 
     public void deleteRecord(Integer r_num);

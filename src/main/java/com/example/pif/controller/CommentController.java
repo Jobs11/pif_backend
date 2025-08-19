@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.pif.dto.CommentVO;
@@ -20,7 +21,6 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/pif/comment/")
 public class CommentController {
 
-
     @Autowired
     CommentService commentService;
 
@@ -31,7 +31,7 @@ public class CommentController {
     }
 
     @GetMapping("/getlist")
-    public List<CommentVO> getCommentList(@Param("c_getnum") Integer c_getnum) {
+    public List<CommentVO> getCommentList(@RequestParam("c_getnum") Integer c_getnum) {
         List<CommentVO> comment = commentService.getCommentList(c_getnum);
         System.out.println("댓글 불러오기 성공");
         log.info("댓글 불러오기 성공: {}", comment);
@@ -39,26 +39,27 @@ public class CommentController {
     }
 
     @GetMapping("/getcount")
-    public Integer getCount(@Param("c_getnum") Integer c_getnum) {
+    public Integer getCount(@RequestParam("c_getnum") Integer c_getnum) {
         System.out.println("댓글 불러오기 성공");
         return commentService.getCount(c_getnum);
     }
 
     @PostMapping("/modify")
     public void ModifyComment(@RequestBody CommentVO comment) {
-        commentService.updateComment(comment);;
+        commentService.updateComment(comment);
+        ;
     }
-    
+
     @PostMapping("/delete")
-    public void deleteComment(@Param("c_num") Integer c_num) {
+    public void deleteComment(@RequestParam("c_num") Integer c_num) {
         System.out.println("댓글 삭제완료");
         commentService.deleteComment(c_num);
     }
 
     @GetMapping("/getMyCount")
-    public Integer getMyCount(@Param("c_id") String c_id) {
+    public Integer getMyCount(@RequestParam("c_id") String c_id) {
 
         return commentService.getMyCount(c_id);
     }
-    
+
 }

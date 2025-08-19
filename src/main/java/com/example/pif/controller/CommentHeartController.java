@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.pif.dto.CommentHeartVO;
@@ -33,20 +34,20 @@ public class CommentHeartController {
         commentHeartService.deleteHeart(commentHeart);
         System.out.println("좋아요 취소!");
     }
-    
+
     @GetMapping("/getHeart")
-    public Integer getHeart(@Param("ch_id") String ch_id, @Param("ch_num") Integer ch_num) {
+    public Integer getHeart(@RequestParam("ch_id") String ch_id, @RequestParam("ch_num") Integer ch_num) {
         return commentHeartService.getHeart(ch_id, ch_num);
     }
-    
+
     @GetMapping("/getCount")
-    public Integer getCount(@Param("ch_num") Integer ch_num) {
+    public Integer getCount(@RequestParam("ch_num") Integer ch_num) {
         return commentHeartService.getCount(ch_num);
     }
-    
+
     @GetMapping("/getMyCount")
-    public Integer getMyCount(@Param("ch_id") String ch_id) {
+    public Integer getMyCount(@RequestParam("ch_id") String ch_id) {
         return commentHeartService.getMyCount(ch_id);
     }
-    
+
 }

@@ -28,4 +28,12 @@
 		select count(*) from heart where h_id = #{h_id} and h_num = #{h_num}
 	</select>
 
+	<select id="getTopHeart" resultType="int">
+		SELECT h_num
+		FROM heart
+		GROUP BY h_num
+		ORDER BY COUNT(*) DESC
+		LIMIT 10
+	</select>
+
 </mapper>

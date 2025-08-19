@@ -10,7 +10,7 @@
 		values
 			(#{p_id}, #{r_num}, #{p_content}, #{p_public})
 	</insert>
-	
+
 	<select id="getPostList">
 		SELECT * FROM post WHERE p_public = #{p_public} ORDER BY RAND() LIMIT 10
 	</select>
@@ -36,6 +36,19 @@
 		SELECT COUNT(*) FROM post WHERE p_id = #{p_id}
 	</select>
 
+	<select id="getMyPost">
+		SELECT * FROM post WHERE p_id = #{p_id}
+	</select>
+	
+	<select id="getPostTop" resultType="com.example.pif.dto.PostVO">
+		SELECT p.*
+		FROM post p
+		LEFT JOIN heart h ON p.p_num = h.h_num
+		WHERE p.p_public = '공개'
+		GROUP BY p.p_num
+		ORDER BY COUNT(h.h_num) DESC
+		LIMIT 10
+	</select>
 
 
 </mapper>
