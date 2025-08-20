@@ -2,6 +2,8 @@ package com.example.pif.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.example.pif.dto.PostVO;
 
 public interface PostService {
@@ -18,4 +20,6 @@ public interface PostService {
     public List<PostVO> getPostTop();
 
     public List<PostVO> getMyPost(String p_id);
+
+    public List<PostVO> getSearchPost(String p_content);
 }

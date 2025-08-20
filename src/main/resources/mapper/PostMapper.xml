@@ -19,7 +19,7 @@
 		update 
 			post
 		set
-			p_content = #{p_content}, p_public = #{p_public}
+			p_content = #{p_content}, p_public = #{p_public}, r_num = #{r_num}
 		where
 			p_num = #{p_num}
 	</update>
@@ -48,6 +48,10 @@
 		GROUP BY p.p_num
 		ORDER BY COUNT(h.h_num) DESC
 		LIMIT 10
+	</select>
+
+	<select id="getSearchPost">
+		SELECT * FROM POST WHERE p_content LIKE CONCAT('%', #{p_content}, '%')
 	</select>
 
 

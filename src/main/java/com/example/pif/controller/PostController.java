@@ -45,6 +45,9 @@ public class PostController {
     @PostMapping("/modify")
     public void ModifyPost(@RequestBody PostVO postVO) {
         postService.updatePost(postVO);
+        System.out.println("게시글 수정완료");
+        log.info("게시글 불러오기 성공: {}", postVO);
+
     }
 
     @PostMapping("/delete")
@@ -73,6 +76,11 @@ public class PostController {
         System.out.println("게시글 불러오기 성공");
         log.info("게시글 불러오기 성공: {}", post);
         return post;
+    }
+
+    @GetMapping("/getsearch")
+    public List<PostVO> getSearchPost(@RequestParam("p_content") String p_content) {
+        return postService.getSearchPost(p_content);
     }
 
 }

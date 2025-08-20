@@ -24,4 +24,6 @@ public interface PostMapper {
 
     public List<PostVO> getMyPost(@Param("p_id") String p_id);
 
+    public List<PostVO> getSearchPost(@Param("p_content") String p_content);
+
 }

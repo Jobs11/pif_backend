@@ -51,4 +51,9 @@ public class PostServiceimpl implements PostService {
         return postMapper.getMyPost(p_id);
     }
 
+    @Override
+    public List<PostVO> getSearchPost(String p_content) {
+        return postMapper.getSearchPost(p_content);
+    }
+
 }
